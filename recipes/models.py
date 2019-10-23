@@ -31,14 +31,14 @@ class Recipe(models.Model):
     image = models.ImageField(upload_to='images')
     created_by = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     cook_method = models.CharField(max_length=10, choices=COOK_METHOD_CHOICES, default = OVEN)
-    prep_time = models.CharField(max_length=25, default = 1)
-    cook_time = models.CharField(max_length=25, default = 1)
-    cook_temp = models.CharField(max_length=255, default = 1)
+    prep_time = models.CharField(max_length=25)
+    cook_time = models.CharField(max_length=25)
+    cook_temp = models.CharField(max_length=255)
     temperature_unit = models.CharField(max_length=10, choices=TEMPERATURE_UNIT_CHOICES, default = F)
-    yield_amount = models.CharField(max_length=25, default = 1)
-    yield_unit = models.CharField(max_length=25, default = 1)
-    directions = models.CharField(max_length=25, default = 1)
-    note = models.CharField(max_length=25, default = 1)
+    yield_amount = models.CharField(max_length=25)
+    yield_unit = models.CharField(max_length=25)
+    directions = models.CharField(max_length=250)
+    note = models.CharField(max_length=250)
 
 
 

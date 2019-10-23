@@ -12,6 +12,7 @@ class App extends Component {
 
     this.state = {
       title: '',
+      cook_method: '',
       image:null,
       preview: null,
       recipes: []
@@ -42,6 +43,7 @@ class App extends Component {
     let formData = new FormData();
     formData.append('title', this.state.title);
     formData.append('image', this.state.image);
+    formData.append('cook_method', this.state.cook_method);
 
     axios.post('/api/v1/recipes/', formData, {
       headers: {
@@ -72,7 +74,6 @@ class App extends Component {
       <li key={recipe.id}>
         <p>{recipe.title}</p>
         <p>{recipe.created_by}</p>
-
         <p>{recipe.cook_method}</p>
         <p>{recipe.prep_time}</p>
         <p>{recipe.cook_time}</p>
@@ -88,7 +89,11 @@ class App extends Component {
     return (
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
+          <p>Title</p>
           <input type='text' name='title' value={this.state.title} onChange={this.handleChange}/>
+          <p>Cook Method</p>
+          <input type='text' name='cook_method' value={this.state.cook_method} onChange={this.handleChange}/>
+          <p>Add Image</p>
           <input type='file' name='image' onChange={this.handleImageChange}/>
 
           {this.state.image ? (
