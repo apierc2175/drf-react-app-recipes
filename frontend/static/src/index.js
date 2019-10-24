@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Login from './Login.js'
 import Add from './Add.js'
+import My from './My.js'
 import * as serviceWorker from './serviceWorker';
 import { Link } from 'react-router-dom'
 
@@ -15,9 +16,11 @@ ReactDOM.render(
   <Router>
     <Link to="/account/signup/">Signup</Link>
     <Link to="/add/">Add a Recipe</Link>
+    <Link to="/my/">My Recipes</Link>
     <Switch>
       <Route path='/login' component={Login} />
       <Route path='/add/' component={Add} />
+      <Route path='/my/' component={My} />
       <Route exact path='/' component={App} />
     </Switch>
   </Router>
