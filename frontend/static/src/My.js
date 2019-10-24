@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
-import Recipe from '.models';
 
 class My extends Component {
 
@@ -15,7 +14,7 @@ class My extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/v1/recipes/')
+    axios.get('/api/v1/recipes/my')
     .then(res => {
       this.setState({recipes: res.data});
     })
@@ -40,18 +39,12 @@ class My extends Component {
         <img src={recipe.image} alt=''/>
       </li>
     ))
-    if(created_by == User) {
       return (
         <ul>
           {recipes}
         </ul>
       )
-    } else {
-      return (
-        <h1>You have no recipes</h1>
-      )
     }
   }
-}
 
 export default My;

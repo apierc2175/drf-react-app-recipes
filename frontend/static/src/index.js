@@ -14,9 +14,12 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 ReactDOM.render(
   <React.Fragment>
   <Router>
-    <Link to="/account/signup/">Signup</Link>
-    <Link to="/add/">Add a Recipe</Link>
-    <Link to="/my/">My Recipes</Link>
+  <ul className="links">
+    <li className="links"><Link to="/account/signup/">Signup</Link></li>
+    <li className="links"><Link to="/add/">Add a Recipe</Link></li>
+    <li className="links"><Link to="/my/">My Recipes</Link></li>
+    <li className="links"><Link to="/">All Recipes</Link></li>
+  </ul>
     <Switch>
       <Route path='/login' component={Login} />
       <Route path='/add/' component={Add} />

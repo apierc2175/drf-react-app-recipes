@@ -37,7 +37,7 @@ class Recipe(models.Model):
     temperature_unit = models.CharField(max_length=10, choices=TEMPERATURE_UNIT_CHOICES, default = F)
     yield_amount = models.CharField(max_length=25, default = 1)
     yield_unit = models.CharField(max_length=25, default = 1)
-    directions = models.CharField(max_length=25, default = 1)
+    directions = models.CharField(max_length=255, default = 1)
     note = models.CharField(max_length=25, default = 1)
 
 
